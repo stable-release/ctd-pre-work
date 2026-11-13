@@ -1,0 +1,134 @@
+body {
+    font: 22px system-ui;
+    padding: 1.5rem;
+    max-width: 50rem;
+    margin: auto;
+}
+
+form {
+    padding-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: middle;
+    margin-bottom: 1.5rem;
+}
+
+form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    color: #555;
+}
+
+input {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    font: inherit;
+    min-width: 10rem;
+}
+
+button {
+    margin-top: 0.5rem;
+    padding: 0.4rem 2rem;
+    border: 1px solid #ccc;
+    background: #f8f8f8;
+    border-radius: 0.25rem;
+}
+
+#navigation {
+    display: flex;
+}
+
+.view-switch {
+    display: flex;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.view-button {
+    padding: 0.4rem 0.9rem;
+    border: 1px solid #ccc;
+    background: #f8f8f8;
+    border-radius: 0.25rem;
+}
+
+.view-button[aria-pressed="true"] {
+    background: #06c;
+    color: #fff;
+    border-color: #06c;
+}
+
+.forecast-view[hidden] {
+    display: none;
+}
+
+.daily-list {
+    list-style: none;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.daily-card {
+    display: flex;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid #ccc;
+    background: #f8f8f8;
+    border-radius: 0.25rem;
+}
+
+.daily-date {
+    text-decoration: none;
+    margin-right: auto;
+}
+
+.daily-temperature {
+    margin-right: 1rem;
+}
+
+.hourly-list {
+    list-style: none;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.hourly-card {
+    display: flex;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid #ccc;
+    background: #f8f8f8;
+    border-radius: 0.25rem;
+}
+
+.hourly-hour {
+    text-decoration: none;
+    margin-right: auto;
+}
+
+.hourly-temperature {
+    margin-right: 1rem;
+}
+
+#back {
+    margin-bottom: 1rem;
+    margin-right: auto;
+}
+
+#resultsList {
+    list-style: none;
+    padding: 0;
+}
+
+#resultsList li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+#resultsList a {
+    color: #06c;
+    text-decoration: none;
+}
+
+#resultsList a:hover {
+    text-decoration: underline;
+}

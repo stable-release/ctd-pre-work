@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Weather Forecaster</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header>Weather Forecaster</header>
+        <form id="searchForm" autocomplete="off">
+            <label
+                >City or District
+                <input
+                    id="city"
+                    name="city"
+                    type="text"
+                    pattern="[A-Za-z]+"
+                    title="Letters only"
+                    placeholder="Shenzhen"
+                    default="Shenzhen"
+                    value="Shenzhen"
+                    required
+                />
+            </label>
+            <label
+                >Region
+                <input
+                    id="region"
+                    name="region"
+                    type="text"
+                    pattern="[A-Za-z]+"
+                    title="Letters only"
+                    placeholder="Guangdong"
+                    default="Guangdong"
+                    value="Guangdong"
+                />
+            </label>
+            <button class="go" type="submit">Go</button>
+        </form>
+
+        <main>
+            <section id="page-root" class="page">
+                <p>Type a search above and press <strong>Go</strong>.</p>
+            </section>
+
+            <section id="page-results" class="page">
+                <p id="resultsMeta"></p>
+                <ul id="resultsList"></ul>
+            </section>
+
+            <section id="page-forecast" class="page">
+                <div id="navigation">
+                    <button type="button" id="back">Return</button>
+                    <div id="view-switch">
+                        <button
+                            type="button"
+                            id="daily-button"
+                            class="view-button"
+                        >
+                            Daily
+                        </button>
+                        <button
+                            type="button"
+                            id="hourly-button"
+                            class="view-button"
+                        >
+                            Hourly
+                        </button>
+                    </div>
+                </div>
+                <article id="forecast">
+                    <div id="daily-view" class="forecast-view"></div>
+                    <div id="hourly-view" class="forecast-view"></div>
+                </article>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>
