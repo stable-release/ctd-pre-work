@@ -113,7 +113,7 @@ async function renderResults(route) {
                     latitude: l.latitude,
                     longitude: l.longitude,
                 });
-            a.textContent = `${l.name} ${l.admin1} - ${l.latitude}, ${l.longitude}`;
+            a.textContent = `${l.name} ${l.admin1} <Latitude: ${l.latitude}, Longitude: ${l.longitude}>`;
             li.append(a);
             resultsList.append(li);
         }
@@ -171,7 +171,13 @@ async function renderForecast(route) {
             date.classList.add("daily-date");
             temperature.classList.add("daily-temperature");
 
-            date.textContent = dailyTime[i];
+            const [y, m, d] = dailyTime[i].split('-').map(Number);
+            const parsed = new Date(y, m - 1, d).toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric'
+            });
+
+            date.textContent = parsed;
             temperature.textContent = `${dailyTemperatureMin[i]}° / ${dailyTemperatureMax[i]}° C`;
 
             card.append(date);
@@ -196,7 +202,7 @@ async function renderForecast(route) {
             hour.classList.add("hourly-hour");
             temperature.classList.add("hourly-temperature");
 
-            hour.textContent = `${i}:00`;
+            hour.textContent = `${i}:00 ${Intl.DateTimeFormat().resolvedOptions().timeZone}`;
             temperature.textContent = `${hourlyTemperature[i]}° C`;
 
             card.append(hour);
